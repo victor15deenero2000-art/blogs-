@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmos Fundamentales de Recorrido</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="blog-header">
+    <div class="blog-hero-container">
+        <h1>Algoritmos Fundamentales de Recorrido</h1>
+        <p class="hero-meta">🔵 Por Ever Q. · 4 Dic 2024</p>
+    </div>
+</header>
+
+<nav class="breadcrumb">
+    <a href="index.html">Home</a> › 
+    <span>Blogs</span> › 
+    <span>Algoritmos de Recorrido</span>
+</nav>
+
+<div class="blog-wrapper">
+
+    <div class="blog-image">
+        <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=1200" alt="">
+    </div>
+
+    <main class="blog-content">
+
+        <h2>1. BFS (Breadth-First Search)</h2>
+        <p>
+            El algoritmo BFS realiza un recorrido en anchura.
+            Explora primero todos los nodos vecinos antes de pasar al siguiente nivel.
+        </p>
+
+        <h3>Pseudocódigo</h3>
+        <pre>
+BFS(Grafo, inicio):
+    crear cola vacía
+    marcar inicio como visitado
+    encolar(inicio)
+
+    mientras cola no vacía:
+        nodo = desencolar()
+        para cada vecino de nodo:
+            si no está visitado:
+                marcar visitado
+                encolar(vecino)
+        </pre>
+
+        <h3>Aplicaciones</h3>
+        <ul>
+            <li>Búsqueda del camino más corto.</li>
+            <li>Estructuras de redes.</li>
+        </ul>
+
+        <h2>2. DFS (Depth-First Search)</h2>
+        <p>
+            DFS recorre el grafo en profundidad, avanzando lo más lejos posible antes de retroceder.
+        </p>
+
+        <h3>Pseudocódigo</h3>
+        <pre>
+DFS(nodo):
+    marcar nodo como visitado
+    para cada vecino del nodo:
+        si no está visitado:
+            DFS(vecino)
+        </pre>
+
+        <h3>Aplicaciones</h3>
+        <ul>
+            <li>Detección de ciclos.</li>
+            <li>Clasificación topológica.</li>
+            <li>Exploración de laberintos.</li>
+        </ul>
+        </main>
+
+    <div class="blog-actions">
+        <a class="back-button" href="index.html">← Volver al Inicio</a>
+    </div>
+
+</div>
+
+</body>
+</html>
+

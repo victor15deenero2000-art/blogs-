@@ -1,0 +1,425 @@
+/* --------------------------------------------------------------------------------------- */
+/* BLOG STYLESHEET - ORGANIZACIÓN PROFESIONAL                     */
+/* --------------------------------------------------------------------------------------- */
+
+/*
+| TABLA DE CONTENIDO:
+| 1. GLOBAL & RESET
+| 2. NAVBAR & HEADER
+| 3. HERO BANNER
+| 4. HOME GRID (TARJETAS DE ARTÍCULOS)
+| 5. BLOG TEMPLATE (PÁGINAS INTERNAS)
+| 6. RESPONSIVIDAD (MEDIA QUERIES)
+*/
+
+/* --------------------------------------------------------------------------------------- */
+/* 1. GLOBAL & RESET */
+/* --------------------------------------------------------------------------------------- */
+
+/* Asumiendo que 'Inter' se importa en el HTML. Si no, debe agregarse aquí: */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap'); */
+
+body {
+    font-family: 'Inter', sans-serif, Arial; 
+    margin: 0;
+    padding: 0;
+    line-height: 1.7; 
+    background-color: #f9fafb; 
+    color: #374151; 
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+    object-fit: cover;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    color: #111827; 
+    line-height: 1.2;
+}
+
+/* Estilo para bloques de código o pseudocódigo */
+pre {
+    background-color: #eef2ff;
+    border-left: 4px solid #4f46e5;
+    padding: 15px;
+    margin: 20px 0;
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
+    color: #1f2937;
+    border-radius: 4px;
+}
+
+/* --------------------------------------------------------------------------------------- */
+/* 2. NAVBAR & HEADER */
+/* --------------------------------------------------------------------------------------- */
+
+.navbar {
+    background: #fff;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.nav-links {
+    display: flex;
+    gap: 22px;
+    list-style: none; /* OCULTA LAS VIÑETAS */
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links a {
+    text-decoration: none; /* ELIMINA EL SUBRAYADO */
+    color: #222;
+    font-weight: 500;
+    padding: 5px 0;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: #4f46e5;
+}
+
+.nav-links a.active {
+    border-bottom: 2px solid #4f46e5;
+    padding-bottom: 4px;
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none; /* CRÍTICO: OCULTAR POR DEFECTO */
+    position: absolute;
+    top: 28px;
+    left: 0; /* CRÍTICO: Asegura que el menú inicie en el borde de "Blogs" */
+    background: white;
+    padding: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    list-style: none;
+    width: 230px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1001; /* CRÍTICO: Para que esté sobre otros elementos */
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li a {
+    padding: 10px 15px;
+    display: block;
+    color: #374151;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f3f4f6;
+    color: #4f46e5;
+}
+
+/* Botones de Autenticación */
+.auth-buttons a {
+    margin-left: 15px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #444;
+}
+
+.auth-buttons .signup {
+    background-color: #4f46e5;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+.auth-buttons .signup:hover {
+    background-color: #4338ca;
+}
+
+
+/* --------------------------------------------------------------------------------------- */
+/* 3. HERO BANNER */
+/* --------------------------------------------------------------------------------------- */
+
+.hero {
+    background: url('https://images.unsplash.com/photo-1550592704-6c36ce8b25df?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat; 
+    height: 450px; 
+    display: flex;
+    align-items: center;
+    color: white;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6); 
+}
+
+.hero-content {
+    position: relative;
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3.2rem;
+    margin-bottom: 10px;
+    color: white; /* Asegura el color blanco */
+}
+
+.hero h3 {
+    color: #e0e7ff; 
+    font-weight: 400;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    color: #e0e7ff;
+}
+
+.badge {
+    background: #4f46e5;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+/* --------------------------------------------------------------------------------------- */
+/* 4. HOME GRID (TARJETAS DE ARTÍCULOS) */
+/* --------------------------------------------------------------------------------------- */
+
+.articles {
+    width: 92%;
+    max-width: 1200px;
+    margin: 80px auto;
+}
+
+.articles h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px; 
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08); 
+    text-decoration: none;
+    color: #333;
+    overflow: hidden;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+.card img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    font-size: 1.2rem;
+    margin-top: 0;
+    min-height: 50px; 
+}
+
+.card-content p {
+    color: #6b7280;
+    font-size: 0.95rem;
+}
+
+.meta {
+    display: block;
+    margin-top: 15px;
+    color: #4b5563;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------------------- */
+/* 5. BLOG TEMPLATE (PÁGINAS INTERNAS) */
+/* --------------------------------------------------------------------------------------- */
+
+.blog-header {
+    background-color: #e0e7ff;
+    padding: 60px 0 40px 0;
+    text-align: center;
+}
+
+.blog-hero-container {
+    width: 92%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.blog-hero-container h1 {
+    font-size: 2.5rem;
+    margin: 0 0 10px 0;
+    color: #1f2937;
+}
+
+.blog-hero-container .hero-meta {
+    color: #4b5563;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.breadcrumb {
+    width: 92%;
+    max-width: 900px;
+    margin: 20px auto;
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: #4f46e5;
+}
+.breadcrumb span {
+    color: #1f2937;
+}
+
+.blog-wrapper {
+    width: 92%;
+    max-width: 900px;
+    margin: 0 auto 60px auto;
+}
+
+.blog-image img {
+    width: 100%;
+    height: 350px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.blog-content {
+    background: transparent; 
+    padding: 0;
+    box-shadow: none;
+}
+
+.blog-content h2 {
+    font-size: 1.8rem;
+    margin-top: 40px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.blog-content h3 {
+    font-size: 1.4rem;
+    margin-top: 30px;
+    color: #4f46e5;
+}
+
+.blog-content p {
+    margin-bottom: 20px;
+    font-size: 1.1rem; 
+}
+
+.blog-content ul {
+    list-style: disc;
+    padding-left: 25px;
+}
+
+/* Botones al final del blog */
+.blog-actions {
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #4f46e5;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #4338ca;
+}
+
+/* --------------------------------------------------------------------------------------- */
+/* 6. RESPONSIVIDAD (MEDIA QUERIES) */
+/* --------------------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    /* Ocultamos los enlaces de navegación y botones de auth para simplificar el menú en móvil */
+    .nav-links, .auth-buttons {
+        display: none; 
+    }
+    .nav-container {
+        justify-content: center; /* Centramos el logo */
+    }
+    .articles-grid {
+        grid-template-columns: 1fr; /* Una columna en móvil */
+    }
+    .hero {
+        height: 300px;
+    }
+    .hero-content {
+        margin: 0 20px; /* Reducimos el margen lateral */
+        text-align: center;
+    }
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    .blog-hero-container h1 {
+        font-size: 2rem;
+    }
+    .blog-image img {
+        height: 250px; /* Reducimos la altura de la imagen del blog */
+    }
+}
