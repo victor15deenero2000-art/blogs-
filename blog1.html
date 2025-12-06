@@ -11,7 +11,7 @@
 <header class="blog-header">
     <div class="blog-hero-container">
         <h1>Introducción a los Grafos: Nodos, Aristas y Tipos</h1>
-        <p class="hero-meta">🟢 Por Javier C. · 5 Dic 2024</p>
+        <p class="hero-meta">🟢 Por Victor Hernandez. · 5 Dic 2024</p>
     </div>
 </header>
 
@@ -24,52 +24,55 @@
 <div class="blog-wrapper">
 
     <div class="blog-image">
-        <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=1200" alt="">
+        <img src="https://www.inesem.es/revistadigital/informatica-y-tics/files/2017/03/grafo-1.jpg" alt="">
     </div>
 
     <main class="blog-content">
 
         <h2>¿Qué es un Grafo?</h2>
         <p>
-            Un grafo es una estructura matemática compuesta por dos elementos fundamentales:
-            <strong>nodos (o vértices)</strong> y <strong>aristas (o edges)</strong>.
-            Los nodos representan entidades y las aristas representan relaciones entre ellas.
+            Un grafo es un modelo abstracto que permite representar sistemas donde existen elementos 
+            y conexiones entre ellos. Se utiliza ampliamente en computación, ingeniería, logística y 
+            análisis de redes sociales. Está compuesto principalmente por 
+            <strong>nodos</strong>, que representan entidades, y <strong>aristas</strong>, que representan relaciones.
         </p>
 
         <h2>Nodos</h2>
         <p>
-            Los nodos son los puntos o elementos principales del grafo.
-            Cada nodo puede contener información o simplemente representar una posición en la estructura.
+            Los nodos son unidades fundamentales dentro del grafo. Pueden simbolizar usuarios, ciudades, 
+            servidores o cualquier entidad real o conceptual. Según el tipo de problema, pueden tener 
+            atributos adicionales como etiquetas, estados o valores asociados.
         </p>
 
         <h2>Aristas</h2>
         <p>
-            Las aristas son conexiones entre nodos.
-            Pueden ser dirigidas (flechas) o no dirigidas (líneas simples) dependiendo de la relación.
+            Las aristas representan los vínculos o caminos entre nodos. Estas conexiones pueden indicar 
+            relaciones de comunicación, rutas, transferencia de datos o dependencia lógica. Las aristas 
+            pueden tener dirección, peso o representar múltiples niveles de relación.
         </p>
 
         <h2>Tipos de Grafos</h2>
 
         <h3>1. Grafo No Dirigido</h3>
-        <p>Las conexiones no tienen dirección. La relación es bidireccional.</p>
+        <p>Representa relaciones mutuas donde el orden no importa, como la amistad entre dos personas.</p>
 
         <h3>2. Grafo Dirigido (Dígrafo)</h3>
-        <p>Cada arista tiene un sentido definido, representado por flechas.</p>
+        <p>Las conexiones tienen un sentido, útil para procesos donde la secuencia importa, como flujos de trabajo.</p>
 
         <h3>3. Grafo Ponderado</h3>
-        <p>Las aristas contienen un valor numérico llamado peso.</p>
+        <p>Asigna un valor numérico a cada arista, ideal para representar distancias, costos o tiempos.</p>
 
         <h3>4. Grafo No Ponderado</h3>
-        <p>No incluye pesos en las aristas.</p>
+        <p>Las aristas no tienen valor asociado; solo importa la existencia de la conexión.</p>
 
         <h3>5. Grafo Simple</h3>
-        <p>No tiene bucles ni múltiples aristas entre dos nodos.</p>
+        <p>Contiene una sola arista entre dos nodos y no permite bucles, siendo el tipo más básico.</p>
 
         <h3>6. Multigrafo</h3>
-        <p>Puede contener varias aristas entre los mismos nodos.</p>
+        <p>Permite varias conexiones entre los mismos nodos, útil para modelar sistemas con múltiples relaciones.</p>
 
         <h3>7. Grafo Completo</h3>
-        <p>Todos los nodos están conectados entre sí.</p>
+        <p>Cada nodo está conectado con todos los demás, lo que representa la máxima conectividad posible.</p>
         </main>
 
     <div class="blog-actions">
