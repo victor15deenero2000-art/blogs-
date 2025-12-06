@@ -11,7 +11,7 @@
 <header class="blog-header">
     <div class="blog-hero-container">
         <h1>Algoritmos Fundamentales de Recorrido</h1>
-        <p class="hero-meta">🔵 Por Ever Q. · 4 Dic 2024</p>
+        <p class="hero-meta">🔵 victor hernandez. · 4 Dic 2024</p>
     </div>
 </header>
 
@@ -24,59 +24,64 @@
 <div class="blog-wrapper">
 
     <div class="blog-image">
-        <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=1200" alt="">
+        <img src="https://www.freelancinggig.com/blog/wp-content/uploads/2019/02/BFS-and-DFS-Algorithms.png" alt="">
     </div>
 
     <main class="blog-content">
 
         <h2>1. BFS (Breadth-First Search)</h2>
         <p>
-            El algoritmo BFS realiza un recorrido en anchura.
-            Explora primero todos los nodos vecinos antes de pasar al siguiente nivel.
+            El algoritmo BFS realiza un recorrido por niveles, explorando primero los nodos más cercanos al origen.
+            Este enfoque garantiza encontrar el camino más corto en grafos no ponderados, ya que visita cada capa 
+            de vecinos antes de avanzar a la siguiente.
         </p>
 
         <h3>Pseudocódigo</h3>
         <pre>
 BFS(Grafo, inicio):
-    crear cola vacía
+    crear una cola vacía
     marcar inicio como visitado
     encolar(inicio)
 
-    mientras cola no vacía:
+    mientras la cola no esté vacía:
         nodo = desencolar()
-        para cada vecino de nodo:
-            si no está visitado:
-                marcar visitado
+        para cada vecino en la lista de adyacencia de nodo:
+            si el vecino no ha sido visitado:
+                marcar como visitado
                 encolar(vecino)
         </pre>
 
         <h3>Aplicaciones</h3>
         <ul>
-            <li>Búsqueda del camino más corto.</li>
-            <li>Estructuras de redes.</li>
+            <li>Cálculo del camino más corto en grafos no ponderados.</li>
+            <li>Propagación de señales o mensajes en redes.</li>
+            <li>Verificación de conectividad entre dos nodos.</li>
         </ul>
 
         <h2>2. DFS (Depth-First Search)</h2>
         <p>
-            DFS recorre el grafo en profundidad, avanzando lo más lejos posible antes de retroceder.
+            DFS recorre el grafo en profundidad, avanzando por un camino hasta no poder continuar 
+            y retrocediendo después. Esto lo hace ideal para explorar estructuras complejas que requieren 
+            seguir múltiples ramas antes de encontrar una solución.
         </p>
 
         <h3>Pseudocódigo</h3>
         <pre>
 DFS(nodo):
     marcar nodo como visitado
-    para cada vecino del nodo:
-        si no está visitado:
+    para cada vecino en la lista de adyacencia del nodo:
+        si el vecino no ha sido visitado:
             DFS(vecino)
         </pre>
 
         <h3>Aplicaciones</h3>
         <ul>
-            <li>Detección de ciclos.</li>
-            <li>Clasificación topológica.</li>
-            <li>Exploración de laberintos.</li>
+            <li>Detección de ciclos en grafos.</li>
+            <li>Generación y recorrido de árboles de decisión.</li>
+            <li>Clasificación topológica en grafos dirigidos acíclicos.</li>
+            <li>Búsqueda en laberintos o mapas complejos.</li>
         </ul>
-        </main>
+    </main>
 
     <div class="blog-actions">
         <a class="back-button" href="index.html">← Volver al Inicio</a>
@@ -86,4 +91,3 @@ DFS(nodo):
 
 </body>
 </html>
-
